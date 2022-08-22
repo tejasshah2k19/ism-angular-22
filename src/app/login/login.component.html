@@ -1,6 +1,11 @@
-<h2>Login</h2>
+<h2 align="center">Login</h2>
 
-Email: <input type="text"/><br>
-Password: <input type="text"/><br>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+         Email: <input type="text" [(ngModel)]="email" class="form-control" /><br>
+        Password: <input type="text" [(ngModel)]="password" class="form-control" /><br>
 
-<button type="button">Login</button>
+        <button class="btn btn-primary" type="button" (click)="login()">Login</button>
+    </div>
+</div>
