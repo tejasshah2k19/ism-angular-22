@@ -1,0 +1,194 @@
+
+---------------ng new project name 
+
+ng serve 
+
+ng s 
+
+ng server --open 
+
+ng s --o 
+
+
+controller - view - css - controllerTest
+
+component - view - css - test 
+
+class-> AppComponent 
+default component 
+parent component 
+bootstrap component 
+1) app.component.ts | class:logic  { type script }  
+2) app.component.css | style 
+3) app.component.html | view 
+4) app.component.sepc.ts | test 
+
+src main java 
+
+src -- index.html 
+	app
+
+
+web.xml -> controller class , url  
+
+app.module.ts [ component ] 
+app-routing.moudle.ts [ component url mapping ] 
+
+controller-servlet :  component - class - serve request - logic 
+
+how to load a component ? 
+
+nodejs
+controller 
+	sessioncontroller 
+		login 
+	export 
+
+server.js 
+	app.post("/login",sessionController.login);
+
+SingleTon -> ligh weighted framework ->  
+@Component 
+ 
+
+selector -> tag -> which is used to load your component in html file 
+	<app-root></app-root>
+
+c++
+class A{
+};
+
+pacakge controller; 
+java 
+public class A{
+}
+import controller.A; 
+
+@Component
+controller 
+typescript 
+export class A{
+}
+import {A} from "controller" 
+
+javascript is subset of typescript 
+typescirpt is superset of javascript 
+
+
+ng generate component signup 
+ng g c signup 
+
+
+app.module.ts 
+1) component -> registration - map 
+2) external lib - module - component 
+3) bootstrap -> 
+4) providers -> interceptor , services 
+
+
+
+variable -> input
+
+two way binding -> ngModel 
+
+
+import -> ?? app.module.ts 
+
+
+---------------------------------------------------------
+
+
+ng s --o 
+
+npm install -> package.json -> dep -> install 
+
+node_modules -> dep -> download 
+
+
+
+signup -> submit --> 
+            validation
+            db insert
+            success msg / error msg -> toastr 
+            redirect to login page
+
+
+how to create object ? 
+spring -> DI 
+
+spring bean -> stereotype -> .xml -> bean 
+
+@Autowired 
+ToastrService toastr; 
+
+
+Service 
+ToastrService -> toastr load -> notification load 
+
+
+package.json -> pom.xml
+angular.json -> appliaction.properties 
+
+app.module.ts 
+1)component
+2)external module / lib  / class / service
+3)bootstrap component
+4)providers [ interceptor ]  -> api -> outgoing -> response -> 200 ->   
+
+app-routing.module.ts 
+component - url - routes 
+
+--------------------------------------------------------------
+api 
+    service 
+        session service 
+                login   
+                signup
+                forgetpassword 
+        user service 
+        
+        product service 
+
+ng generate service session 
+ng g s session 
+
+
+angular - REST API  - HttpClient 
+
+Spring api -> rest client -> postman 
+
+
+-------------------------------------------
+
+
+angular --> api request --> authToken 
+
+	1) api call -> set header -> every api call -> manually set header 
+	2) interceptor -> like filter -> it will call in all request -> set header 
+
+
+
+	ng g interceptor token 
+			intercept(request,next) 
+
+				let headers = request.headers 
+				request.method 
+				next.handel(request.clone({setHeaders:authToken}));
+	app.module.ts 	
+		providers: [
+				{interceptor:HTTP_INTERCEPTOR,useClass:TokenInterceptor}
+			]
+
+
+spring --> server --> authToken [ private ] 
+
+	filter -> CORS 
+				accept , headers , method , 
+	filter ->
+				token->authToken ? private -> verification 
+						   public -> skip 
+
+
+
+
+

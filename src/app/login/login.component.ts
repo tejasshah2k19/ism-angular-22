@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   email = ""
   password = ""
 
-  constructor(private sessionService: SessionService,private toastr:ToastrService,private router:Router) { }
+  constructor(private sessionService: SessionService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,10 +21,24 @@ export class LoginComponent implements OnInit {
   login() {
     let user = { "email": this.email, "password": this.password }
     this.sessionService.loginApi(user).subscribe(resp => {
+
+      //json 
+      console.log(resp.data.user);
+      let authToken  = resp.data.user.authToken
+      localStorage.setItem("authToken",authToken)
+      
       this.toastr.success("Login done")
-      this.router.navigateByUrl("/home")
+      if (resp.data.user.role.roleName == "user") {
+
+        this.router.navigateByUrl("/home")
+      } else if (resp.data.user.role.roleName == "admin") {
+
+        this.router.navigateByUrl("/dashboard")
+      }
+
+
     }, err => {
-      this.toastr.error("Invalid Credentials....","401")
+      this.toastr.error("Invalid Credentials....", "401")
     })
   }
 
