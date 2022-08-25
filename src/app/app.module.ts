@@ -13,6 +13,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
 import { TokenInterceptor } from './token.interceptor';
 import { AddRoleComponent } from './add-role/add-role.component';
+import {DialogModule} from 'primeng/dialog';
+import { ViewroleComponent } from './viewrole/viewrole.component';
+import { LogoutComponent } from './logout/logout.component';
+import { UserlayoutComponent } from './userlayout/userlayout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,10 @@ import { AddRoleComponent } from './add-role/add-role.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    AddRoleComponent
+    AddRoleComponent,
+    ViewroleComponent,
+    LogoutComponent,
+    UserlayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,8 @@ import { AddRoleComponent } from './add-role/add-role.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule 
+    HttpClientModule,
+    DialogModule 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]

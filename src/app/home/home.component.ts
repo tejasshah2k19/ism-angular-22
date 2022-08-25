@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalDialogService } from 'ngx-modal-dialog';
-import { ToastrService } from 'ngx-toastr';
+ import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../user.service';
 
 @Component({
@@ -12,6 +11,8 @@ import { UserService } from '../user.service';
 export class HomeComponent implements OnInit {
 
   roles: Array<any> = []
+  roleName:string="" 
+  display=false
   constructor(private userService: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
@@ -42,7 +43,9 @@ export class HomeComponent implements OnInit {
   viewRole(roleId:any){
       this.userService.getRoleByIdApi(roleId).subscribe(resp=>{
         // alert(resp.roleName)
-        
+        this.roleName = resp.roleName
+        this.display=true 
+         
       },err=>{
         this.toastr.error(err)
       })
