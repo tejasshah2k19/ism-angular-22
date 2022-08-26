@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <a routerLink="/addrole">Add Role</a>
+        <a routerLink="/user/addrole">Add Role</a>
         <table class="table table-bordered">
 
             <tr>
@@ -20,7 +20,9 @@
                     |
                     <span class="fakelink" (click)="viewRole(r.roleId)">View</span>
                     |
-                    <a routerLink="/user/viewrole/{{r.roleId}}">View2</a>
+                    <a routerLink="/user/viewrole/{{r.roleId}}">View2</a> |
+                    <a routerLink="/user/editrole/{{r.roleId}}">Edit</a> |
+                    
                 </td>
             </tr>
 

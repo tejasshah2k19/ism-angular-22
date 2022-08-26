@@ -202,3 +202,28 @@ session storage
 	sessionStorage.setItem("name","gopal")
 	sessionStorage.removeItem("name")
 	
+
+1) app.module.ts -> RectiveFormsModule 
+
+2)	.ts 
+	    FormGroup : abcForm 
+		FormControl : fn ln 
+	   addUser() 
+
+3) 	.html 
+		<form [formGroup]="abcForm" (ngSubmit)="addUser()" >
+				FN <input type="text" formControlName="fn">
+
+		<button type="submit"> 
+
+4) events 
+		touched 
+		untouch
+
+		prestine 
+		dirty 	
+
+		valid
+		invalid 
+5) myForm.valid => 
+

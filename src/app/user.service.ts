@@ -33,4 +33,8 @@ export class UserService {
   getRoleByIdApi(roleId:any):Observable<any>{
     return this.http.get(environment.url+"admin/role/"+roleId)
   }
+
+  updateRole(role:any):Observable<any>{
+    return this.http.put(environment.url+"admin/role",role)
+  }
 }

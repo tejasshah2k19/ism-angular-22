@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from "@angular/forms"
+import { FormsModule, ReactiveFormsModule } from "@angular/forms"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -17,6 +17,8 @@ import {DialogModule} from 'primeng/dialog';
 import { ViewroleComponent } from './viewrole/viewrole.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UserlayoutComponent } from './userlayout/userlayout.component';
+import { EditroleComponent } from './editrole/editrole.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { UserlayoutComponent } from './userlayout/userlayout.component';
     AddRoleComponent,
     ViewroleComponent,
     LogoutComponent,
-    UserlayoutComponent
+    UserlayoutComponent,
+    EditroleComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { UserlayoutComponent } from './userlayout/userlayout.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    DialogModule 
+    DialogModule,
+    ReactiveFormsModule 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]

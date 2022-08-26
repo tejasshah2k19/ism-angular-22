@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
  import { ToastrService } from 'ngx-toastr';
+import { Role } from '../role';
 import { UserService } from '../user.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
   roles: Array<any> = []
   roleName:string="" 
   display=false
+   
   constructor(private userService: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {

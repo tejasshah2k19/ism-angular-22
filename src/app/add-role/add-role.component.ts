@@ -19,7 +19,7 @@ export class AddRoleComponent implements OnInit {
     let role = { "roleName": this.roleName }
     this.userService.addRole(role).subscribe(resp => {
       this.toastr.success("Role Added");
-      this.route.navigateByUrl("/home")
+      this.route.navigateByUrl("/user/home")
       
     })
   }

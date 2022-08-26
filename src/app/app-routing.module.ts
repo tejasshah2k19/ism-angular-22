@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddRoleComponent } from './add-role/add-role.component';
+import { AddUserComponent } from './add-user/add-user.component';
 import { AuthTokenGuard } from './auth-token.guard';
+import { EditroleComponent } from './editrole/editrole.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -20,7 +22,10 @@ const routes: Routes = [
       { component: HomeComponent, path: "home" },
       { component: AddRoleComponent, path: "addrole" },
       { component: ViewroleComponent, path: "viewrole/:roleId" },
-    ], canActivate: [AuthTokenGuard]
+      {component:EditroleComponent,path:"editrole/:roleId"},
+      {component:AddUserComponent,path:"adduser"}
+    ], 
+    //canActivate: [AuthTokenGuard]
   }
 ];
 
