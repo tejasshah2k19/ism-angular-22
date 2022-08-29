@@ -1,0 +1,17 @@
+<h2>My Accounts</h2>
+<table class="table table-bordered">
+    <tr>
+        <td>AccountName</td>
+        <td>Balance</td>
+        <td>Currency</td>
+        <td>Action</td>
+    </tr>
+
+    <tr *ngFor="let account of accounts">
+        <td>{{account.accountName}}</td>
+        <td>{{account.balance}}</td>
+        <td>{{account.currency}}</td>
+        <td><a routerLink="/user/addpayment">AddPayment</a></td>
+    </tr>
+
+</table>
