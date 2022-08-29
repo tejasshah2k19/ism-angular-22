@@ -4,6 +4,8 @@ import { AddAccountComponent } from './add-account/add-account.component';
 import { AddPaymentComponent } from './add-payment/add-payment.component';
 import { AddRoleComponent } from './add-role/add-role.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AuthTokenGuard } from './auth-token.guard';
 import { EditroleComponent } from './editrole/editrole.component';
 import { HomeComponent } from './home/home.component';
@@ -19,21 +21,26 @@ const routes: Routes = [
   { component: LoginComponent, path: "login" },
   { component: SignupComponent, path: "signup" },
   { component: LogoutComponent, path: "logout" },
-  {component:LoginComponent,path:""},
+  { component: LoginComponent, path: "" },
 
   {
     component: UserlayoutComponent, path: "user", children: [
 
-      {component:MyHomeComponent,path:"home"},
+      { component: MyHomeComponent, path: "home" },
       { component: AddRoleComponent, path: "addrole" },
       { component: ViewroleComponent, path: "viewrole/:roleId" },
-      {component:EditroleComponent,path:"editrole/:roleId"},
-      {component:AddUserComponent,path:"adduser"},
-      {component:ListAccountComponent,path:"myaccounts"},
-      {component:AddAccountComponent,path:"newaccount"},
-      {component:AddPaymentComponent,path:"addpayment"}
-    ], 
+      { component: EditroleComponent, path: "editrole/:roleId" },
+      { component: AddUserComponent, path: "adduser" },
+      { component: ListAccountComponent, path: "myaccounts" },
+      { component: AddAccountComponent, path: "newaccount" },
+      { component: AddPaymentComponent, path: "addpayment/:accountId" }
+    ],
     //canActivate: [AuthTokenGuard]
+  },
+  {
+    component: AdminLayoutComponent, path: "admin", children: [
+      { path: "dashboard", component: DashboardComponent }
+    ]
   }
 ];
 

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("authToken", authToken)
       localStorage.setItem("userId",resp.data.user.userId)
       localStorage.setItem("email",resp.data.user.email)
-      
+      localStorage.setItem("firstName",resp.data.user.firstName)
       this.toastr.success("Login done"+resp.data.user.authToken)
 
       this.authTokenService.authToken = resp.data.user.authToken

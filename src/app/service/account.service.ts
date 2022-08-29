@@ -13,4 +13,8 @@ export class AccountService {
   getAccountByUser(userId:string):Observable<any>{
       return this.httpClient.get(environment.url+"user/account/"+userId)
   }
+
+  addBalance(account:any):Observable<any>{
+    return this.httpClient.put(environment.url+"user/account",account)
+  }
 }

@@ -23,6 +23,11 @@ import { MyHomeComponent } from './my-home/my-home.component';
 import { ListAccountComponent } from './list-account/list-account.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { AddPaymentComponent } from './add-payment/add-payment.component';
+import { GenderPipe } from './pipe/gender.pipe';
+import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { FooterComponent } from './admin/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { AddPaymentComponent } from './add-payment/add-payment.component';
     MyHomeComponent,
     ListAccountComponent,
     AddAccountComponent,
-    AddPaymentComponent
+    AddPaymentComponent,
+    GenderPipe,
+    AdminLayoutComponent,
+    DashboardComponent,
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
